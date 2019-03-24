@@ -1,0 +1,86 @@
+{% extends "index.html" %}
+{%block title%}
+Conic
+{% endblock %}
+{% block question %}
+<h4 class="motto"></h4>
+<div class="subscribe">
+    <h1 class="logo" style="font-size:45px">
+        Determine which type of conic section this equation will produce:<br>
+        {% if data[2][0] < 0 %}
+            {{ data[2][0] }}x<sup>2</sup>
+        {% elif data[2][0] == 0 %}
+
+        {% else %}
+              {{ data[2][0] }}x<sup>2</sup>
+        {% endif %}
+
+
+        {% if data[2][1] < 0 %}
+            {{ data[2][1] }}y<sup>2</sup>
+        {% elif data[2][1] == 0 %}
+
+        {% else %}
+                +{{ data[2][1] }}y<sup>2</sup>
+        {% endif %}
+
+
+        {% if data[2][2] < 0 %}
+            {{ data[2][2] }}x
+        {% elif data[2][2] == 0 %}
+
+        {% else %}
+                +{{ data[2][2] }}x
+        {% endif %}
+
+
+        {% if data[2][3] < 0 %}
+            {{ data[2][3] }}y
+        {% elif data[2][3] == 0 %}
+
+        {% else %}
+                +{{ data[2][3] }}y
+        {% endif %}
+
+
+        {% if data[2][4] < 0 %}
+            {{ data[2][4] }}
+        {% elif data[2][4] == 0 %}
+
+        {% else %}
+                +{{ data[2][4] }}
+        {% endif %}
+</h1>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div style = "text-align: center">
+            <form style="text-align: center" class="form-inline" action="/checkConic" method="POST">
+              <div style="display: flex; margin-left: 42%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+
+                <input type="hidden" name="firstPoly" value="{{data[2]}}">
+                <input type="hidden" name="answer" value="{{data[1]}}">
+                <table>
+                  <tr><td>
+                <button href="calculus" class="btn btn-default " type="submit" name="shape" value="0" style="color:white; font-size:18px;">Circle</button></td>
+                <td>
+              <button href="calculus" class="btn btn-default " type="submit" name="shape"value="1" style="color:white; font-size:18px;">Hyperbola</button></td>
+              </tr><tr>
+                <td>
+              <button href="calculus" class="btn btn-default " type="submit" name="shape" value="2" style="color:white; font-size:18px;">Ellipse</button></td>
+              <td>
+            <button href="calculus" class="btn btn-default " type="submit" name="shape" value="3" style="color:white; font-size:18px;">Parabola</button></td>
+            </tr></table>
+
+            </div>
+            <br>
+            <br>
+
+        </form>
+
+    </div>
+    </div>
+{% endblock %}

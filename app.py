@@ -11,6 +11,28 @@ app = Flask(__name__)
 def home():
     return render_template("welcome.html")
 
+@app.route("/conic")
+def conic():
+    data=util.generate_precalc()
+    print(data)
+    return render_template("conic.html",data=data)
+
+@app.route("/checkConic", methods=['POST'])
+def checkConic():
+    print(request.form)
+    print(request.form["answer"])
+    print(request.form["firstPoly"])
+    print(request.form["shape"])
+    answer=request.form["firstPoly"][1:][:-1].split(", ")
+    answers=[]
+    for i in answer:
+        answers.append(int(i))
+    print(answers)
+    c=0
+    if int(request.form["shape"]) == int(request.form["answer"]):
+        c=1
+    return(render_template("conicResponse.html",data=[c,int(request.form["answer"]),answers]))
+
 @app.route("/algebra")
 def algebra():
     data=util.generate_alg()

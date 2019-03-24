@@ -7,7 +7,7 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-    <title>Algebra </title>
+    <title>Conic </title>
 
     <link href="/static/bootstrap.css" rel="stylesheet" />
 	<link href="/static/coming-sssoon.css" rel="stylesheet" />
@@ -32,26 +32,70 @@
 <!--  H1 can have 2 designs: "logo" and "logo cursive"           -->
 
         <div class="content">
-          {% if h[0] == 0 %}
+          {% if data[0] == 0 %}
             <h1 class="logo" style="margin-top: 150px;color:red">Incorrect</h1>
           {% else %}
           <h1 class="logo" style="margin-top: 150px;color:green">Correct</h1>
           {% endif %}
 						<br><br><br>
 						<center>
-              <h3 class="info-text" style="color:white">The roots of x<sup>2</sup>
-                {% if h[2][0] < 0 %}
-                {{ h[2][0] }}x
-                 {% else %}
-                 +{{ h[2][0] }}x
-                 {% endif %}
-                 {% if h[2][1] < 0 %}
-                 {{ h[2][1] }}
-                  {% else %}
-                  +{{ h[2][1] }}
-                  {% endif %} are {{h[1][0]}} and {{h[1][1]}}.</h3>
+              <h3 class="info-text" style="color:white">
+                The equation
+                {% if data[2][0] < 0 %}
+                    {{ data[2][0] }}x<sup>2</sup>
+                {% elif data[2][0] == 0 %}
+
+                {% else %}
+                      {{ data[2][0] }}x<sup>2</sup>
+                {% endif %}
+
+
+                {% if data[2][1] < 0 %}
+                    {{ data[2][1] }}y<sup>2</sup>
+                {% elif data[2][1] == 0 %}
+
+                {% else %}
+                        +{{ data[2][1] }}y<sup>2</sup>
+                {% endif %}
+
+
+                {% if data[2][2] < 0 %}
+                    {{ data[2][2] }}x
+                {% elif data[2][2] == 0 %}
+
+                {% else %}
+                        +{{ data[2][2] }}x
+                {% endif %}
+
+
+                {% if data[2][3] < 0 %}
+                    {{ data[2][3] }}y
+                {% elif data[2][3] == 0 %}
+
+                {% else %}
+                        +{{ data[2][3] }}y
+                {% endif %}
+
+
+                {% if data[2][4] < 0 %}
+                    {{ data[2][4] }}
+                {% elif data[2][4] == 0 %}
+
+                {% else %}
+                        +{{ data[2][4] }}
+                {% endif %}
+                    forms a {% if data[1] == 0 %}
+                    circle
+                    {% elif data[1] == 1 %}
+                    hyperbola
+                    {% elif data[1] == 2 %}
+                    ellipse
+                    {% else %}
+                    parabola
+                    {% endif %}
+                .</h3>
               <br><br><br><br><br>
-              <a href="algebra" class="btn btn-default " style="color:white; font-size:18px;">Try another!</a>
+              <a href="conic" class="btn btn-default " style="color:white; font-size:18px;">Try another!</a>
 					</center>
         </div>
     </div>
@@ -97,7 +141,7 @@
 
        </ul>-->
        <ul class="nav navbar-nav navbar-right">
-				 <li>
+         <li>
  						<a href="/">
  				<i class="fas fa-home"></i>
  			</a></li>

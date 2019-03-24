@@ -55,7 +55,7 @@ def generate_precalc():
 
 def generate_polynomial_derivative(seed, upper_limit):
     random.seed(seed)
-    x = int(random.random()*6) + 2
+    x = int(random.random()*5) + 2
     coefficients = []
     answers = []
     for i in range(x):

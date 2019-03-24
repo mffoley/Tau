@@ -20,7 +20,7 @@ Calculus
                     {% if x ==0 %}
                         {{ data[2][x] }}
                     {% else %}
-                        +{{ data[2][x] }}
+                      +{{ data[2][x] }}
                     {% endif %}
                 {% endif %}
                 {% elif ind == 1 %}
@@ -190,11 +190,11 @@ Calculus
     <div class="row">
         <div style = "text-align: center">
             <form style="text-align: center" class="form-inline" action="/checkCalculus" method="POST">
-              {% if (data[2]| length)<2 %}
+              {% if (data[2][1]| length)+(data[2][0]| length)<6 %}
 
               <div style="display: flex; margin-left: 37.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
                 {% else %}
-                <div style="display: flex; margin-left: 20.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+                <div style="display: flex; margin-left: 0%; flex-direction: row; text-align: center;font-size:18px;font-weight:normal;">
                 {% endif %}
                 <input type="hidden" name="firstPoly" value="{{data[2][0]}}">
                 <input type="hidden" name="secondPoly" value="{{data[2][1]}}">
@@ -208,11 +208,19 @@ Calculus
 
                 {% for x in range(leng) %}
                 <input type="number" name='{{"r"~x}}' id='{{"r"~x}}' style="display: block;width:10%" required class="form-control form-control-lg col-md-2 transparent" size="512"placeholder="0">
+                {% if (data[2][1]| length)+(data[2][0]| length)<6 %}
                 {% if leng-1-x == 0 %}
-                <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'> </label>
+                <label style="color:white; font-size:25px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'> </label>
                 {% else %}
-                <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'>x<sup>{{leng-1-x}}</sup> + </label>
+                <label style="color:white; font-size:25px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'>x<sup>{{leng-1-x}}</sup> + </label>
                 {% endif %}
+                {% else %}
+                {% if leng-1-x == 0 %}
+                <label style="color:white; font-size:17px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'> </label>
+                {% else %}
+                <label style="color:white; font-size:17px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'>x<sup>{{leng-1-x}}</sup> + </label>
+{% endif %}
+                {%endif%}
                 {% endfor %}
             </div>
             <br>
@@ -230,10 +238,10 @@ Calculus
 
 <div class="row">
     <div style = "text-align: center">
-        <form style="text-align: center" class="form-inline" action="/checkCalculus" method="POST">
-          {% if (data[2]| length)<5 %}
+        <form style="text-align: center;margin-left: 0%;" class="form-inline" action="/checkCalculus" method="POST">
+          {% if (data[2]| length)>=6 %}
 
-        <div style="display: flex; margin-left: 20.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+        <div style="display: flex; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
           {% else %}
           <div style="display: flex; margin-left: 37.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
           {% endif %}
@@ -274,11 +282,11 @@ Calculus
 <div class="row">
     <div style = "text-align: center">
         <form style="text-align: center" class="form-inline" action="/checkCalculus" method="POST">
-          {% if (data[2]| length)<5 %}
+          {% if (data[2]| length)<6 %}
 
           <div style="display: flex; margin-left: 37.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
             {% else %}
-            <div style="display: flex; margin-left: 20.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+            <div style="display: flex; margin-left: 0%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
             {% endif %}
             <input type="hidden" name="answers" value="{{data[1]}}">
             <input type="hidden" name="og" value="{{data[2]}}">
