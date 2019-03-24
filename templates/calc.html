@@ -1,0 +1,315 @@
+{% extends "index.html" %}
+{%block title%}
+Calculus
+{% endblock %}
+{% block question %}
+<h4 class="motto"></h4>
+<div class="subscribe">
+    <h1 class="logo" style="font-size:45px">
+        {% if data[0]==0 %}
+        Find the derivative of<br>
+            {% set leng = (data[2]| length) %}
+            {% for x in range(data[2]| length)  %}
+              {% set ind = leng-x-1 %}
+              {% if ind == 0 %}
+                {% if data[2][x] < 0 %}
+                    {{ data[2][x] }}
+                {% elif data[2][x] == 0 %}
+
+                {% else %}
+                    {% if x ==0 %}
+                        {{ data[2][x] }}
+                    {% else %}
+                        +{{ data[2][x] }}
+                    {% endif %}
+                {% endif %}
+                {% elif ind == 1 %}
+                  {% if data[2][x] < 0 %}
+                      {{ data[2][x] }}x
+                  {% elif data[2][x] == 0 %}
+
+                  {% else %}
+                      {% if x ==0 %}
+                          {{ data[2][x] }}x
+                      {% else %}
+                          +{{ data[2][x] }}x
+                      {% endif %}
+                  {% endif %}
+                {% else %}
+                  {% if data[2][x] < 0 %}
+                      {{ data[2][x] }}x<sup>{{leng-x-1}}</sup>
+                  {% elif data[2][x] == 0 %}
+
+                  {% else %}
+                      {% if x ==0 %}
+                          {{ data[2][x] }}x<sup>{{leng-x-1}}</sup>
+                      {% else %}
+                          +{{ data[2][x] }}x<sup>{{leng-x-1}}</sup>
+                      {% endif %}
+                  {% endif %}
+              {% endif %}
+            {% endfor %}
+        <br>
+        {% elif data[0] == 1 %}
+        Find the derivative of <br>(
+            {% set leng = (data[2][0]| length) %}
+            {% for x in range(data[2][0]| length)  %}
+              {% set ind = leng-x-1 %}
+              {% if ind == 0 %}
+                {% if data[2][0][x] < 0 %}
+                    {{ data[2][0][x] }}
+                {% elif data[2][0][x] == 0 %}
+
+                {% else %}
+                    {% if x ==0 %}
+                        {{ data[2][0][x] }}
+                    {% else %}
+                        +{{ data[2][0][x] }}
+                    {% endif %}
+                {% endif %}
+                {% elif ind == 1 %}
+                  {% if data[2][0][x] < 0 %}
+                      {{ data[2][0][x] }}x
+                  {% elif data[2][0][x] == 0 %}
+
+                  {% else %}
+                      {% if x ==0 %}
+                          {{ data[2][0][x] }}x
+                      {% else %}
+                          +{{ data[2][0][x] }}x
+                      {% endif %}
+                  {% endif %}
+                {% else %}
+                  {% if data[2][0][x] < 0 %}
+                      {{ data[2][0][x] }}x<sup>{{leng-x-1}}</sup>
+                  {% elif data[2][0][x] == 0 %}
+
+                  {% else %}
+                      {% if x ==0 %}
+                          {{ data[2][0][x] }}x<sup>{{leng-x-1}}</sup>
+                      {% else %}
+                          +{{ data[2][0][x] }}x<sup>{{leng-x-1}}</sup>
+                      {% endif %}
+                  {% endif %}
+              {% endif %}
+            {% endfor %})(
+            {% set leng = (data[2][1]| length) %}
+            {% for x in range(data[2][1]| length)  %}
+              {% set ind = leng-x-1 %}
+              {% if ind == 0 %}
+                {% if data[2][1][x] < 0 %}
+                    {{ data[2][1][x] }}
+                {% elif data[2][1][x] == 0 %}
+
+                {% else %}
+                    {% if x ==0 %}
+                        {{ data[2][1][x] }}
+                    {% else %}
+                        +{{ data[2][1][x] }}
+                    {% endif %}
+                {% endif %}
+                {% elif ind == 1 %}
+                  {% if data[2][1][x] < 0 %}
+                      {{ data[2][1][x] }}x
+                  {% elif data[2][1][x] == 0 %}
+
+                  {% else %}
+                      {% if x ==0 %}
+                          {{ data[2][1][x] }}x
+                      {% else %}
+                          +{{ data[2][1][x] }}x
+                      {% endif %}
+                  {% endif %}
+                {% else %}
+                  {% if data[2][1][x] < 0 %}
+                      {{ data[2][1][x] }}x<sup>{{leng-x-1}}</sup>
+                  {% elif data[2][1][x] == 0 %}
+
+                  {% else %}
+                      {% if x ==0 %}
+                          {{ data[2][1][x] }}x<sup>{{leng-x-1}}</sup>
+                      {% else %}
+                          +{{ data[2][1][x] }}x<sup>{{leng-x-1}}</sup>
+                      {% endif %}
+                  {% endif %}
+              {% endif %}
+            {% endfor %})
+        <br>
+        {% elif data[0]==2 %}
+        Evaluate
+        <br><img src="https://www.shareicon.net/data/48x48/2015/11/17/673651_mathematics_512x512.png">
+            {% set leng = (data[2]| length) %}
+            {% for x in range(data[2]| length)  %}
+              {% set ind = leng-x-1 %}
+              {% if ind == 0 %}
+                {% if data[2][x] < 0 %}
+                    {{ data[2][x] }}
+                {% elif data[2][x] == 0 %}
+
+                {% else %}
+                    {% if x ==0 %}
+                        {{ data[2][x] }}
+                    {% else %}
+                        +{{ data[2][x] }}
+                    {% endif %}
+                {% endif %}
+                {% elif ind == 1 %}
+                  {% if data[2][x] < 0 %}
+                      {{ data[2][x] }}x
+                  {% elif data[2][x] == 0 %}
+
+                  {% else %}
+                      {% if x ==0 %}
+                          {{ data[2][x] }}x
+                      {% else %}
+                          +{{ data[2][x] }}x
+                      {% endif %}
+                  {% endif %}
+                {% else %}
+                  {% if data[2][x] < 0 %}
+                      {{ data[2][x] }}x<sup>{{leng-x-1}}</sup>
+                  {% elif data[2][x] == 0 %}
+
+                  {% else %}
+                      {% if x ==0 %}
+                          {{ data[2][x] }}x<sup>{{leng-x-1}}</sup>
+                      {% else %}
+                          +{{ data[2][x] }}x<sup>{{leng-x-1}}</sup>
+                      {% endif %}
+                  {% endif %}
+              {% endif %}
+            {% endfor %} dx
+        <br>
+        {% endif %}
+    </h1>
+    {% if data[0]==1 %}
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div style = "text-align: center">
+            <form style="text-align: center" class="form-inline" action="/checkCalculus" method="POST">
+              {% if (data[2]| length)<2 %}
+
+              <div style="display: flex; margin-left: 37.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+                {% else %}
+                <div style="display: flex; margin-left: 20.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+                {% endif %}
+                <input type="hidden" name="firstPoly" value="{{data[2][0]}}">
+                <input type="hidden" name="secondPoly" value="{{data[2][1]}}">
+                <input type="hidden" name="answers" value="{{data[1]}}">
+                <input type="hidden" name="type" value="1">
+                <input type="hidden" name="len" value="{{(data[2][0]|length)+(data[2][1]|length) -1}}">
+                {% set leng = (data[2][0]| length)+(data[2][1]| length)-1-1 %}
+                {% if leng ==0 %}
+                <input type="number" name='r0' id='r0' style="display: block;width:10%" required class="form-control form-control-lg col-md-2 transparent" size="512"placeholder="0">
+                {% endif %}
+
+                {% for x in range(leng) %}
+                <input type="number" name='{{"r"~x}}' id='{{"r"~x}}' style="display: block;width:10%" required class="form-control form-control-lg col-md-2 transparent" size="512"placeholder="0">
+                {% if leng-1-x == 0 %}
+                <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'> </label>
+                {% else %}
+                <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'>x<sup>{{leng-1-x}}</sup> + </label>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <br>
+            <br>
+            <button type="submit" style="text-align: center;" class="btn btn-danger btn-fill">Submit</button>
+
+        </form>
+
+    </div>
+    </div>
+{%elif data[0] == 0%}
+<br>
+<br>
+<br>
+
+<div class="row">
+    <div style = "text-align: center">
+        <form style="text-align: center" class="form-inline" action="/checkCalculus" method="POST">
+          {% if (data[2]| length)<5 %}
+
+        <div style="display: flex; margin-left: 20.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+          {% else %}
+          <div style="display: flex; margin-left: 37.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+          {% endif %}
+            <input type="hidden" name="type" value="0">
+            <input type="hidden" name="len" value="{{(data[2]|length) -1}}">
+            {% for x in range(data[2]| length)  %}
+              <input type="hidden" name='{{"og"~x}}' value="{{data[2][x]}}">
+            {% endfor %}
+            {% set leng = (data[2]| length)-1 %}
+            {% if leng ==0 %}
+            <input type="number" name='r0' id='r0' style="display: block;width:10%" required class="form-control form-control-lg col-md-2 transparent" size="512"placeholder="0">
+            <input type="hidden" name="r0C" value="0">
+            {% endif %}
+
+            {% for x in range(leng) %}
+            <input type="number" name='{{"r"~x}}' id='{{"r"~x}}' style="display: block;width:10%" required class="form-control form-control-lg col-md-2 transparent" size="512"placeholder="0">
+            <input type="hidden" name='{{"r"~x~"C"}}' value="{{data[1][x]}}">
+            {% if leng-1-x == 0 %}
+            <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'> </label>
+            {% else %}
+            <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'>x<sup>{{leng-1-x}}</sup> +&nbsp;</label>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+        <br>
+        <button type="submit" style="text-align: center;" class="btn btn-danger btn-fill">Submit</button>
+
+    </form>
+
+</div>
+</div>
+{% else %}
+<br>
+<br>
+<br>
+
+<div class="row">
+    <div style = "text-align: center">
+        <form style="text-align: center" class="form-inline" action="/checkCalculus" method="POST">
+          {% if (data[2]| length)<5 %}
+
+          <div style="display: flex; margin-left: 37.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+            {% else %}
+            <div style="display: flex; margin-left: 20.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+            {% endif %}
+            <input type="hidden" name="answers" value="{{data[1]}}">
+            <input type="hidden" name="og" value="{{data[2]}}">
+
+            <input type="hidden" name="len" value="{{(data[2]|length) -1}}">
+            {% set leng = (data[2]| length)+1 %}
+            {% if leng ==0 %}
+            <input type="number" name='r0' id='r0' style="display: block;width:10%" required class="form-control form-control-lg col-md-2 transparent" size="512"placeholder="0">
+            {% endif %}
+
+            {% for x in range(leng) %}
+            {% if x==leng-1 %}
+            <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;">C</label>
+            {% else %}
+            <input type="number" name='{{"r"~x}}' id='{{"r"~x}}' style="display: block;width:10%" required class="form-control form-control-lg col-md-2 transparent" size="512"placeholder="0">
+            {% if leng-1-x == 0 %}
+            <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'> </label>
+            {% else %}
+            <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for='{{"r"~x}}'>x<sup>{{leng-1-x}}</sup> +&nbsp;</label>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+        <br>
+        <input type="hidden" name="type" value="2">
+        <button type="submit" style="text-align: center;" class="btn btn-danger btn-fill">Submit</button>
+
+    </form>
+
+</div>
+</div>
+{% endif %}
+{% endblock %}

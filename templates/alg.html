@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+{%block title%}
+Algebra
+{% endblock %}
+{% block question %}
+<h4 class="motto"></h4>
+<div class="subscribe">
+    <h1 class="logo" style="font-size:45px">
+        {% if data[0]==0 %}
+        Find the roots of
+        x<sup>2</sup>
+        {% if data[2][1] < 0 %}
+        {{ data[2][1] }}x
+        {% elif data[2][1] == 0 %}
+
+         {% else %}+{{ data[2][1] }}x
+         {% endif %}
+         {% if data[2][2] < 0 %}{{ data[2][2] }}
+          {% else %}+{{ data[2][2] }}
+          {% endif %}
+        {% else %}
+        Find the quadratic that has the roots
+        {{ data[2][0] }} and {{ data[2][1] }}.
+        <br>
+        {% endif %}
+    </h1>
+    {% if data[0]==0 %}
+    <div class="row">
+        <div style = "text-align: center">
+            <form class="form-inline" action="/checkAlgebra" method="POST">
+              <div class="form-group">
+
+                <input type="hidden" name="type" value="{{data[0]}}">
+                <input type="hidden" name="r1C" value="{{data[1][0]}}">
+                <input type="hidden" name="r2C" value="{{data[1][1]}}">
+                <input type="hidden" name="og1" value="{{data[2][1]}}">
+                <input type="hidden" name="og2" value="{{data[2][2]}}">
+                <label style="color:white; font-size:24px; font-weight:normal" for="r1">&nbsp;&nbsp;x =</label>
+                <input type="number" name="r1" id="r1" class="form-control mx-sm-3 transparent" required min="-90" max="100"  placeholder="0">
+
+                <label style="color:white; font-size:24px; font-weight:normal" for="r2">&nbsp;&nbsp;x =</label>
+                <input type="number" name="r2" id="r2" class="form-control mx-sm-3 transparent" required min="-90" max="100" placeholder="0">
+
+                <br>
+                <br>
+                <button type="submit" class="btn btn-danger btn-fill">Submit</button>
+              </div>
+            </form>
+
+        </div>
+    </div>
+    {%else%}
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div style = "text-align: center">
+            <form style="text-align: center" class="form-inline" action="/checkAlgebra" method="POST">
+              <div style="display: flex; margin-left: 37.5%; flex-direction: row; text-align: center;font-size:24px;font-weight:normal;">
+
+                <input type="hidden" name="type" value="{{data[0]}}">
+                <input type="hidden" name="r1C" value="{{data[1][1]}}">
+                <input type="hidden" name="r2C" value="{{data[1][2]}}">
+                <input type="hidden" name="og1" value="{{data[2][0]}}">
+                <input type="hidden" name="og2" value="{{data[2][1]}}">
+
+                <label style="color:white; font-size:30px; font-weight:normal;display: block;text-align: center;" for="r1">x<sup>2</sup> +&nbsp;</label>
+                <input type="number" name="r1" id="r1" style="display: block;width:10%" required class="form-control form-control-lg col-md-2 transparent" size="512"placeholder="0">
+
+                <label style="display:block; color:white; font-size:30px; font-weight:normal" for="r2">x +&nbsp;</label>
+                <input style="display: block;width:10%" type="number" name="r2" id="r2" required class="form-control col-md-2 transparent" size="51" placeholder="0">
+                <label style="display:block; color:white; font-size:30px; font-weight:normal" >&nbsp;= 0</label>
+              </div>
+                <br>
+                <br>
+                <button type="submit" style="text-align: center;" class="btn btn-danger btn-fill">Submit</button>
+
+            </form>
+
+        </div>
+    </div>
+
+{% endif %}
+{% endblock %}
