@@ -4,6 +4,17 @@ Maryann Foley and Crystal Wang
 
 Our project generates random, but not too difficult problems for 3 math topics: Algebra, precalc, and calculus.  Algebra problems consist of expansion and factoring, precalc questions consist of conic sections, and calculus questions consist of finding derivatives and integrals. The user can input their answers and will get told if they were correct and will be told the correct answer. 
 
+### Example pages
+#### Algebra Question 
+<img src="./screenshots/Algebra.png" width="700"/>
+#### Pre-Calc Question
+<img src="./screenshots/Conic.png" width="700"/>
+#### Calc Question
+<img src="./screenshots/Derivative.png" width="700"/>
+#### Sample Response
+<img src="./screenshots/Response.png" width="700"/>
+
+
 ### Instructions for setup:
 
 #### Virtual enviornment:
